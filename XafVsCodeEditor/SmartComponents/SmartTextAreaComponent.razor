@@ -1,0 +1,33 @@
+﻿@page "/"
+@using SmartComponents
+
+@* <SmartTextArea @bind-Value="@Value.Text" UserRole="@Value.UserRole" /> *@
+
+<SmartTextArea UserRole="@Value.UserRole" UserPhrases="@Value.UserPhrases" @bind-Value="@Value.Text"
+               placeholder="Type your response here..." autofocus />
+
+@* <form class="default-form rounded-md bg-gray-200 p-6 shadow-xl mb-12">
+    <div class="grid mb-5">
+        
+        <SmartTextArea UserRole="@Value.UserRole" UserPhrases="@Value.UserPhrases" @bind-Value="@Value.Text"
+                       placeholder="Type your response here..." autofocus />
+    </div>
+</form> *@
+
+@code {
+    ISmartTextAreaEditorData componentModel;
+    [Parameter]
+    public ISmartTextAreaEditorData Value
+    {
+        get
+        {
+            return componentModel;
+        }
+        set
+        {
+            componentModel = value;
+            
+
+        }
+    }
+}
